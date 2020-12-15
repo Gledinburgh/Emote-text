@@ -1,7 +1,12 @@
 const server = require("http").createServer();
-const io = require("socket.io")(server);
+const io = require("socket.io")(server, {
+  cors: {
+    origin: "http:localhost:3000",
+    methods: ["GET", "POST"]
+  }
+});
 
-const PORT = 4000;
+const PORT = 3000;
 const NEW_CHAT_MESSAGE_EVENT = "newChatMessage";
 
 io.on("connection", (socket) => {
