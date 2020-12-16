@@ -45,6 +45,7 @@
 
 .message-item {
   width: 55%;
+  min-height: 2em;
   margin: 30px;
   padding: 20px 8px;
   word-break: break-word;
@@ -62,7 +63,9 @@
   height: 80px;
   width: 80px;
   border-radius: 50%;
-  background-color: #31a24c;
+
+  text-align: center;
+  font-size: 4em;
 }
 
 .my-emotie {

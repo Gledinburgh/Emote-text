@@ -5,10 +5,14 @@ import "./ChatRoom.css";
 import useChat from "../useChat";
 
 const ChatRoom = (props) => {
+
   const { roomId } = props.match.params; // Gets roomId from URL
   const { messages, sendMessage } = useChat(roomId); // Creates a websocket and manages messaging
   const [newMessage, setNewMessage] = React.useState(""); // Message to be sent
-const [newEmotie, setNewEmote] = React.useState("😐")
+  const [newEmotie, setNewEmote] = React.useState("😐");
+  const [toggleEmotieTray, setToggleEmotieTray] = React.useState(false)
+
+
   const handleNewMessageChange = (event) => {
     setNewMessage(event.target.value);
   };
@@ -18,6 +22,10 @@ const [newEmotie, setNewEmote] = React.useState("😐")
     setNewMessage("");
   };
 
+  const handleEmotieTrayToggle = () => {
+
+    setToggleEmotieTray(!toggleEmotieTray)
+  }
   return (
     <div className="chat-room-container">
       <h1 className="room-name">Room: {roomId}</h1>
@@ -44,8 +52,8 @@ const [newEmotie, setNewEmote] = React.useState("😐")
         </ol>
       </div>
       <div>
-      <EmotieTray setNewEmote={setNewEmote}/>
-      <button className="emotie-select">☺</button>
+      <EmotieTray setNewEmote={setNewEmote} toggleEmotieTray={toggleEmotieTray}/>
+      <button className="emotie-select" onClick={() => handleEmotieTrayToggle() }>☺</button>
       <textarea
         value={newMessage}
         onChange={handleNewMessageChange}
