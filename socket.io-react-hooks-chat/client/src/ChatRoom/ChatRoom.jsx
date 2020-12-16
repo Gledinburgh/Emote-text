@@ -1,5 +1,6 @@
 import React from "react";
 
+import EmotieTray from "./EmotieTray"
 import "./ChatRoom.css";
 import useChat from "../useChat";
 
@@ -23,6 +24,12 @@ const ChatRoom = (props) => {
       <div className="messages-container">
         <ol className="messages-list">
           {messages.map((message, i) => (
+            <div>
+              <div  className={`emotie-item ${
+                message.ownedByCurrentUser ? "my-emotie" : "received-emotie"
+              }`}
+              >
+                emotie</div>
             <li
               key={i}
               className={`message-item ${
@@ -31,15 +38,20 @@ const ChatRoom = (props) => {
             >
               {message.body}
             </li>
+            </div>
           ))}
         </ol>
       </div>
+      <div>
+      <EmotieTray/>
+      <button className="emotie-select">☺</button>
       <textarea
         value={newMessage}
         onChange={handleNewMessageChange}
         placeholder="Write message..."
         className="new-message-input-field"
-      />
+      > </textarea>
+      </div>
       <button onClick={handleSendMessage} className="send-message-button">
         Send
       </button>
