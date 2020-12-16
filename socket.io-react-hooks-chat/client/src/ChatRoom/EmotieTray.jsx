@@ -3,7 +3,7 @@ import "./EmotieTray.css";
 const EmotieTray = (props) => {
 
 const emoties = ["😄", "😔","😒","😐","😆", "🤨","😦","🙂"];
-const [toggleTray, setToggleTray] = React.useState(false)
+
 const trayElement = React.useRef("null")
 const handleEmotieSelect = (emotieId) => {
   props.setNewEmote(emoties[emotieId])
