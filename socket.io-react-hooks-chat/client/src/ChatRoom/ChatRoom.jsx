@@ -8,13 +8,13 @@ const ChatRoom = (props) => {
   const { roomId } = props.match.params; // Gets roomId from URL
   const { messages, sendMessage } = useChat(roomId); // Creates a websocket and manages messaging
   const [newMessage, setNewMessage] = React.useState(""); // Message to be sent
-
+const [newEmotie, setNewEmote] = React.useState("😐")
   const handleNewMessageChange = (event) => {
     setNewMessage(event.target.value);
   };
 
   const handleSendMessage = () => {
-    sendMessage(newMessage);
+    sendMessage(newMessage, newEmotie);
     setNewMessage("");
   };
 
@@ -29,7 +29,8 @@ const ChatRoom = (props) => {
                 message.ownedByCurrentUser ? "my-emotie" : "received-emotie"
               }`}
               >
-                emotie</div>
+                {message.emotie}
+                </div>
             <li
               key={i}
               className={`message-item ${
@@ -43,7 +44,7 @@ const ChatRoom = (props) => {
         </ol>
       </div>
       <div>
-      <EmotieTray/>
+      <EmotieTray setNewEmote={setNewEmote}/>
       <button className="emotie-select">☺</button>
       <textarea
         value={newMessage}
