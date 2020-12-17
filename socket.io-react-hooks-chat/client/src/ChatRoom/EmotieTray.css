@@ -16,3 +16,7 @@
   text-align: center;
 }
 
+.emotie-choice:focus {
+  border-color:#af1ccc !important;
+  background-color:#e1d4e4;
+}

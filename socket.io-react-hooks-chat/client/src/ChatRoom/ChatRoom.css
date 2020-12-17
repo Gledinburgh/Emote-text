@@ -1,3 +1,5 @@
+
+
 .chat-room-container {
   position: fixed;
   left: 0;
@@ -26,11 +28,16 @@
   padding: 0;
 }
 
+.input-container {
+  display: flex;
+
+}
+
 .emotie-select {
   z-index: 10;
-  position: absolute;
-  height: 80px;
-  width: 50px;
+  position: static;
+
+  width: 3em;
   font-size: 40px;
 }
 
@@ -54,11 +61,13 @@
 }
 
 .my-message {
-  background-color: rgb(0, 132, 255);
+  background-color: rgb(0, 153, 128);
   margin-left:auto;
   ;
 }
-
+.emotie-item:target {
+    border-color:#412846;
+  }
 .emotie-item {
   height: 80px;
   width: 80px;
@@ -76,17 +85,18 @@
 }
 
 .received-message {
-  background-color: #3f4042;
+  background-color: #000768;
   margin-right: auto;
 }
 
 .send-message-button {
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 600;
   color: white;
-  background: #31a24c;
+  background: #412846;
   padding: 24px 12px;
   border: none;
+  width: 100px;
 }
 
 .messages-container, .new-message-input-field, .send-message-button {

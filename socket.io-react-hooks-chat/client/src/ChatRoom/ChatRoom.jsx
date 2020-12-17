@@ -72,6 +72,7 @@ const ChatRoom = (props) => {
       </div>
       <div>
       <EmotieTray setNewEmote={setNewEmote} toggleEmotieTray={toggleEmotieTray}/>
+      <div className="input-container">
       <button className="emotie-select" onClick={() => handleEmotieTrayToggle() }>☺</button>
       <textarea
         value={newMessage}
@@ -79,10 +80,12 @@ const ChatRoom = (props) => {
         placeholder="Write message..."
         className="new-message-input-field"
       > </textarea>
-      </div>
+
       <button onClick={handleSendMessage} className="send-message-button">
         Send
       </button>
+      </div>
+      </div>
     </div>
   );
 };
