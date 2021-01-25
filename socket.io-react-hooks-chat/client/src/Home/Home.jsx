@@ -18,13 +18,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <input
-      type="text"
-      placeholder="userName"
-      value={userName}
-      onChange={handelUserNameChange}
-      className="text-input-field"
-      />
+      <div className="logo">Em☺te-text</div>
       <input
         type="text"
         placeholder="Room"

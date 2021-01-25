@@ -14,6 +14,14 @@
   font-size: 24px;
 }
 
+.logo {
+  flex-direction: horizontal;
+  color: rgb(90, 20, 59);
+  text-align: center;
+  font-size: 5em;
+  margin-bottom: 20px;
+  }
+
 .text-input-field:focus {
   outline: none;
 }
@@ -22,7 +30,7 @@
   margin-top: 20px;
   padding: 24px 12px;
   font-size: 28px;
-  background: #31a24c;
+  background: rgb(90, 20, 59);
   color: white;
   font-weight: 600;
   text-align: center;
