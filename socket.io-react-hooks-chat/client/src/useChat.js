@@ -17,8 +17,7 @@ const useChat = (roomId) => {
 
     // Listens for incoming messages
     socketRef.current.on(NEW_CHAT_MESSAGE_EVENT, (message) => {
-      console.log('socketRef', socketRef.current)
-      const incomingMessage = {
+        const incomingMessage = {
         ...message,
         ownedByCurrentUser: message.senderId === socketRef.current.id,
       };
